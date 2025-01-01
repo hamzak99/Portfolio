@@ -1,0 +1,12 @@
+#footer .social_handle_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+#footer .social_handle_container .social_handles{
+    width: 3rem;
+    font-size: 1.5rem;
+}

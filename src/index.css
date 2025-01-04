@@ -128,8 +128,9 @@ img {
 
 .section_wrapper {
   max-width: 1190px;
-  margin: auto;
+  margin: 0 auto; /* Centers horizontally */
   padding: 80px 20px;
+  display: block;
 }
 .icon_container {
   width: 2.5rem;

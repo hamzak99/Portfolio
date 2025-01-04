@@ -9,6 +9,12 @@ const tabs = [
   { name: "UI/UX" },
   { name: "Apps" },
 ];
+// const tabs = [
+//   { name: "All" },
+//   { name: "Web" },
+//   { name: "Graphics & Visualization" },
+//   { name: "System Programming" },
+// ]
 const Projects = () => {
   const [displayableProjects, setDisplayableProjects] =
     React.useState(projects);

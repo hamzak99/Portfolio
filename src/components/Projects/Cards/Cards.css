@@ -47,7 +47,7 @@
 .card span {
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .card .picture {
@@ -110,7 +110,7 @@
 
 .card .stack_container .stack_right .stack_box_container {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
 }
 
@@ -124,7 +124,7 @@
   align-items: center;
 
   flex-direction: column;
-  gap: 5px;
+  /* gap: 5px; */
   font-size: 14px;
 }
 
@@ -144,7 +144,7 @@
   border-radius: var(--border-radius-2);
   background: rgba(var(--card-rgb), 0.1);
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  padding: 0.5rem;
+  padding: 0.3rem;
 }
 
 .card .stack_view_more {
@@ -206,4 +206,22 @@
 .card .button_container .btn_share:hover {
   background: rgba(var(--card-rgb), 0.1) !important;
   border-color: rgba(var(--card-border-rgb), 0.15) !important;
+}
+
+.toggle_button {
+  width: 100%;
+  border-radius: var(--border-radius-2);
+  background: rgba(var(--card-rgb), 0.1);
+  border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  padding: 0.5rem;
+  color: white;
+  margin-top: 10px;
+}
+
+
+@media (max-width:900px) {
+  .card .stack_container .stack_right .stack_box_container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
 }

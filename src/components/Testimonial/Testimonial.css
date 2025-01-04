@@ -37,9 +37,19 @@
 .swiper-pagination-clickable .swiper-pagination-bullet {
   background: var(--color-primary);
 }
+@media (max-width: 1105px) {
+  #testimonial .section_wrapper .section_header {
+    display: flex;
+    flex-direction: column;
+  }
+  #testimonial .section_wrapper .section_header > * {
+    margin: 10px;
+    padding: 0;
+  }
+}
 
-/* @media (max-width: 950px) {
+@media (max-width: 950px) {
   #testimonial .section_wrapper {
     grid-template-columns: 100%;
   }
-} */
+}

@@ -4,11 +4,17 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 const Card = (props) => {
   const [openStackExpressionBar, setOpenStackExpressionBar] =
     React.useState(false);
+  const [showAll, setShowAll] = React.useState(false);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
 
   return (
     <div className="card">
       <div className="picture">
-        <img src={props.image} alt={props.title} />
+        {console.log(Object.values(props.image)[0])}
+        <img src={Object.values(props.image)[0]} alt={props.title} />
       </div>
 
       <div className="card_details">
@@ -23,26 +29,29 @@ const Card = (props) => {
             <div className="stack_left">Stack</div>
             <div className="stack_right">
               <div className="stack_box_container">
-                {props.stack.map((list, index) => {
-                  if (index < 4) {
-                    return (
-                      <div className="stack_box">
-                        <div className="stack_icon_container">
-                          <span
-                            className="stack_icon"
-                            style={{ color: list.iconColor, fontSize: "20px" }}
-                          >
-                            {list.icon}
-                          </span>
-                          <span className="stack_name">{list.name}</span>
-                        </div>
+                {props.stack
+                  .slice(0, showAll ? props.stack.length : 6)
+                  .map((list, index) => (
+                    <div className="stack_box" key={index}>
+                      <div className="stack_icon_container">
+                        <span
+                          className="stack_icon"
+                          style={{ color: list.iconColor, fontSize: "20px" }}
+                        >
+                          {list.icon}
+                        </span>
+                        <span className="stack_name">{list.name}</span>
                       </div>
-                    );
-                  }
-                })}
+                    </div>
+                  ))}
               </div>
+              {props.stack.length > 6 && (
+                <button onClick={toggleShowAll} className="toggle_button">
+                  {showAll ? "Show Less" : "Show More"}
+                </button>
+              )}
               {/* End Stack */}
-              {props.stack.lenght > 4 ? (
+              {/* {props.stack.lenght > 6 ? (
                 <div className="stack_view_more">
                   <div
                     className="more_btn"
@@ -77,7 +86,7 @@ const Card = (props) => {
                 </div>
               ) : (
                 ""
-              )}
+              )} */}
             </div>
           </div>
           {/* end stack_container */}

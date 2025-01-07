@@ -2,7 +2,10 @@ import React from "react";
 import "./Contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
+import { sendEmail } from "../../helper/Contact";
 const Contact = () => {
+  const form = React.useRef();
+
   return (
     <section id="contact">
       <div className="section_wrapper contact_container">
@@ -45,7 +48,12 @@ const Contact = () => {
               </a>
             </article>
           </div>
-          <form>
+          <form
+            ref={form}
+            onSubmit={(e) => {
+              sendEmail(e, form);
+            }}
+          >
             <input
               type="text"
               name="name"

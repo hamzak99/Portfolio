@@ -1,28 +1,22 @@
-import { DiReact } from "react-icons/di";
-import { FaNodeJs, FaWordpress } from "react-icons/fa";
+import { FaWordpress } from "react-icons/fa";
 import {
   SiCplusplus,
   SiDocker,
-  SiExpress,
   SiMariadbfoundation,
-  SiMongodb,
   SiNginx,
   SiPostgresql,
   SiPython,
 } from "react-icons/si";
-import { SiFiverr, SiJavascript } from "react-icons/si";
-import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
-import { CgFigma } from "react-icons/cg";
-import { TbApi, TbBrandReactNative } from "react-icons/tb";
+import { SiJavascript } from "react-icons/si";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { TbApi } from "react-icons/tb";
 import { SiDjango, SiSocketdotio } from "react-icons/si";
 import { cub3d, inception, webserver, ft_transcendence } from "./images";
 
 export const menu = [
   { name: "About" },
-  { name: "Services" },
   { name: "Skill" },
   { name: "Projects" },
-  { name: "Testimonial" },
   { name: "Contact" },
 ];
 
@@ -120,7 +114,7 @@ export const projects = [
       description: `Build a basic HTTP server from scratch using C++. This project focuses on handling HTTP requests, 
         managing connections, and implementing socket programming. The server processes client requests, serves static files, 
         and supports HTTP/1.1 functionality.`,
-      demoLink: "https://example.com/demo-webserver",
+      demoLink: "https://github.com/YKO-01/WebServe",
     },
     stack: [
       {
@@ -132,112 +126,25 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Project Management application",
-    image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*6iO0wm8q4cByvxY6kB9WiQ.png",
-    category: "Apps",
+    title: "Cub3d",
+    image: { cub3d },
+    category: "Web",
     data: {
-      description: `Simplify project coordination with our intuitive Project Management application. Track tasks, collaborate in real-time, and streamline workflows effortlessly. With customizable features and robust reporting, stay organized and efficient.
-                       Elevate your project management experience and achieve success with ease.`,
-      demoLink: "https://google.com/",
+      description: `Cub3d is a 3D graphics engine developed in C. The project uses raycasting to render a 3D environment and
+      allows user navigation through the world using keyboard controls.`,
+      demoLink: "https://github.com/hamzak99/cub3D",
     },
     stack: [
       {
-        name: "React Native",
-        icon: <TbBrandReactNative />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Mobile bank - App Design",
-    image:
-      "https://i.pinimg.com/originals/a0/be/c3/a0bec3706210e6ab28470eee95bf5889.png",
-    category: "UI/UX",
-    data: {
-      description: `Experience banking at your fingertips with our sleek Mobile Bank app design. Seamlessly manage your finances on-the-go with intuitive navigation, secure transactions, and personalized insights. Enjoy a modern interface that prioritizes convenience and accessibility, revolutionizing your banking experience.`,
-      demoLink: "https://google.com/",
-    },
-    stack: [
-      {
-        name: "Figma",
-        icon: <CgFigma />,
-        iconColor: "orangered",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Quiz App Development",
-    image:
-      "https://i.pinimg.com/originals/b3/35/02/b33502e465346ace2a7f1df203d851a3.jpg",
-    category: "Apps",
-    data: {
-      description: `Elevate engagement and knowledge retention with our Quiz App 
-                      Development project. Seamlessly crafted for interactive learning 
-                      experiences, our app offers customizable quizzes, real-time feedback, 
-                      and captivating visuals. Empower users to test their knowledge anytime,
-                       anywhere, fostering a dynamic learning environment tailored to their 
-                       needs.`,
-      demoLink: "https://google.com/",
-    },
-    stack: [
-      {
-        name: "React Native",
-        icon: <TbBrandReactNative />,
-        iconColor: "skyblue",
-      },
-      {
-        name: "NodeJs",
-        icon: <FaNodeJs />,
-        iconColor: "green",
-      },
-      {
-        name: "ExpressJs",
-        icon: <SiExpress />,
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        iconColor: "limegreen",
+        name: "C",
+        icon: <SiCplusplus />,
+        iconColor: "#00599C",
       },
     ],
   },
 ];
 
 export const experience = [
-  {
-    title: "UI/UX",
-    data: [
-      {
-        skill: "Figma",
-        level: "Experienced",
-      },
-      {
-        skill: "Sketch",
-        level: "Intermediate",
-      },
-      {
-        skill: "XD",
-        level: "Intermediate",
-      },
-    ],
-  },
   {
     title: "Frontend Development",
     data: [
@@ -255,19 +162,11 @@ export const experience = [
       },
       {
         skill: "Tailwind",
-        level: "Intermediate",
-      },
-      {
-        skill: "Bootstrap",
         level: "Experienced",
       },
       {
         skill: "React",
-        level: "Experienced",
-      },
-      {
-        skill: "React Native",
-        level: "Experienced",
+        level: "Intermediate",
       },
     ],
   },
@@ -279,20 +178,16 @@ export const experience = [
         level: "Experienced",
       },
       {
-        skill: "MangoDB",
+        skill: "PostgreSQL",
         level: "Intermediate",
       },
       {
-        skill: "PHP",
+        skill: "django",
         level: "Experienced",
       },
       {
-        skill: "Python",
+        skill: "Express",
         level: "Intermediate",
-      },
-      {
-        skill: "MySQL",
-        level: "Experienced",
       },
     ],
   },
@@ -300,23 +195,13 @@ export const experience = [
 
 export const socialHandles = [
   {
-    name: "Fiverr",
-    icon: <SiFiverr />,
-    link: "",
-  },
-  {
     name: "Github",
     icon: <AiFillGithub />,
-    link: "",
+    link: "https://github.com/hamzak99",
   },
   {
     name: "LinkedIn",
     icon: <AiFillLinkedin />,
-    link: "",
-  },
-  {
-    name: "Youtube",
-    icon: <AiFillYoutube />,
-    link: "https://www.youtube.com/channel/UCEtnsPZQEd0l1tbr_nDQd5Q?sub_confirmation=1",
+    link: "https://www.linkedin.com/in/hamza-kasbaoui-863a752b7/",
   },
 ];

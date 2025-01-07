@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { profile1 } from "../../images/index.js";
+import { profile1, threeD } from "../../images/index.js";
 
 const Header = () => {
   return (
@@ -24,7 +24,11 @@ const Header = () => {
               </p>
             </div>
             <div className="header_info_bottom">
-              <button className="btn">Download CV</button>
+              <button className="btn">
+                <a href="/hamzaKasbaoui.pdf" download="MyPDFFile">
+                  Download CV
+                </a>
+              </button>
               <a href="mailto:mradinuba@gmail.com" className="btn">
                 Email Me
               </a>
@@ -33,7 +37,7 @@ const Header = () => {
         </div>
         <div className="column profile_wrapper">
           <div className="profile_photo_container">
-            <img src={profile1} alt="img" className="profile_photo" />
+            <img src={threeD} alt="img" className="profile_photo" />
           </div>
         </div>
       </div>

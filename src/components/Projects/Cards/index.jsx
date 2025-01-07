@@ -1,6 +1,13 @@
 import React from "react";
 import "./Cards.css";
 import { AiOutlineShareAlt } from "react-icons/ai";
+import { FaCopy } from "react-icons/fa";
+
+function copyLink(link) {
+  navigator.clipboard.writeText(link);
+  alert("Link Copied to Clipboard");
+}
+
 const Card = (props) => {
   const [openStackExpressionBar, setOpenStackExpressionBar] =
     React.useState(false);
@@ -13,7 +20,7 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="picture">
-        {console.log(Object.values(props.image)[0])}
+        {/* {console.log(Object.values(props.image)[0])} */}
         <img src={Object.values(props.image)[0]} alt={props.title} />
       </div>
 
@@ -90,17 +97,17 @@ const Card = (props) => {
             </div>
           </div>
           {/* end stack_container */}
-
+          {/* {console.log("props", props.data.demoLink)} */}
           <div className="button_container">
             <a
-              href={props.demoLink}
+              href={props.data.demoLink}
               target="_blank"
               className="btn btn_primary"
             >
               Demo
             </a>
             <div className="btn_share">
-              <AiOutlineShareAlt />
+              <FaCopy onClick={() => copyLink(props.data.demoLink)} />
             </div>
           </div>
         </div>

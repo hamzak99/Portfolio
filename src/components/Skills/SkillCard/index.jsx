@@ -2,7 +2,6 @@ import React from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
 import "./SkillCard.css";
 const SkillCard = ({ data, title }) => {
-  console.log(data, title);
   return (
     <div className="skill_card">
       <h3>{title}</h3>

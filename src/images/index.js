@@ -9,3 +9,5 @@ export { default as webserver } from "./webserver.png";
 export { default as cub3d } from "./cub3d.jpeg";
 export { default as ft_transcendence } from "./pong.png";
 export { default as threeD } from "./3d.png";
+
+export { default as Webmoney } from "./logo.svg";

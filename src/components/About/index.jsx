@@ -1,13 +1,13 @@
 import React from "react";
 import "./About.css";
-import { profile2 } from "../../images/index.js";
+import { mainProfile } from "../../images/index.js";
 const About = () => {
   return (
     <section id="about">
       <div className="section_wrapper about_container">
         <div className="me_container blur-effect">
           <div className="photo_container">
-            <img src={profile2} alt="" className="profile_photo" />
+            <img src={mainProfile} alt="" className="profile_photo" />
           </div>
         </div>
         <div className="section_header">

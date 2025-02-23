@@ -3,18 +3,18 @@ import "./Projects.css";
 import { projects } from "../../data.js";
 import Card from "./Cards/index.jsx";
 import { sumArr } from "../../helper/index";
-const tabs = [
-  { name: "All" },
-  { name: "Web" },
-  { name: "UI/UX" },
-  { name: "Apps" },
-];
 // const tabs = [
 //   { name: "All" },
 //   { name: "Web" },
-//   { name: "Graphics & Visualization" },
-//   { name: "System Programming" },
-// ]
+//   { name: "UI/UX" },
+//   { name: "Apps" },
+// ];
+const tabs = [
+  { name: "All" },
+  { name: "Web" },
+  { name: "Game Development" },
+  { name: "Systems & Networking" },
+];
 const Projects = () => {
   const [displayableProjects, setDisplayableProjects] =
     React.useState(projects);

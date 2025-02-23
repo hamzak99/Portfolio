@@ -1,21 +1,24 @@
 import React from "react";
 import "./Header.css";
 import { profile1, threeD } from "../../images/index.js";
+import { TypingEffect } from "./TypingEffect.jsx";
 
 const Header = () => {
   return (
     <header id="header" className="blur-effect">
-      <div className="stroke_text intro_text">HELLO</div>
+      {/* <div className="stroke_text intro_text">HELLO</div> */}
       <div className="section_wrapper header_container">
         <div className="column intro_container blur-effect">
           <div className="header_info">
             <div className="header_info_top">
               Hello There! I'm{" "}
-              <span className="color_primary">Emmanuel Eze</span>
+              <span className="color_primary">
+                <TypingEffect text="Hamza Kasbaoui" speed={100} />
+              </span>
             </div>
             <div className="header_info_middle">
               <h1 className="primary_title header_title">
-                I'M A WEB DEVELOPER
+                I'M A <TypingEffect text="WEB DEVELOPER" speed={100} />
               </h1>
               <p className="text_muted header_description">
                 I dissect intricate user experience challenges to engineer
@@ -29,7 +32,7 @@ const Header = () => {
                   Download CV
                 </a>
               </button>
-              <a href="mailto:mradinuba@gmail.com" className="btn">
+              <a href="mailto:kasbaouihamza99@gmail.com" className="btn">
                 Email Me
               </a>
             </div>

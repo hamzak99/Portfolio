@@ -3,10 +3,16 @@
   align-items: stretch;
   justify-content: space-between;
   padding: 20px;
-  position: relative;
+  position: fixed;
   width: 100%;
+  z-index: 10000;
+  background-color: black;
 }
-
+.active {
+  background: var(--gradient-1);
+  background-size: 200% auto;
+  transition: var(--transition);
+}
 .navbar_container .log_container {
   display: flex;
   align-items: center;

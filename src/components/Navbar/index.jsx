@@ -1,28 +1,68 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Navbar.css";
 // import { SiWebmoney } from "react-icons/si";
 import { menu } from "../../data.js";
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 // import { FaArrowUpRightFromSquare, FaBarsStaggered } from "react-icons/fa6";
 // import { FaTimes } from "react-icons/fa";
 import { Webmoney } from "../../images/index.js";
 import XClose from "../../icons/XClose.jsx";
 import UpRightArrowIcon from "../../icons/UpRightArrowIcon.jsx";
 import MenuBarsStaggered from "../../icons/MenuBarsStaggered.jsx";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const Navbar = () => {
   const [showSide, setShowSide] = React.useState(false);
+  const [visible, setVisible] = React.useState(false);
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    if (currentScrollPos > 145) {
+      return setVisible(true);
+    }
+    return setVisible(false);
+  };
+
+  gsap.registerPlugin(useGSAP);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const container = useRef(null);
+  useEffect(() => {
+    if (visible) {
+      gsap.fromTo(
+        ".navbar_container",
+        { y: -250, width: "100%" },
+        { y: 0, top: 0, zIndex: 100 }
+      );
+    }
+  }, [visible]);
+
+  useGSAP(
+    () => {
+      const timeline = gsap.timeline();
+      timeline.from(".tab_item", { opacity: 0, stagger: 0.5 });
+    },
+    { scope: container }
+  );
   return (
-    <nav className="navbar_container">
+    <nav
+      ref={container}
+      className={`navbar_container ${visible ? "visible" : ""}`}
+    >
       {showSide ? (
         <div className="overlay" onClick={() => setShowSide(!showSide)}></div>
       ) : (
         ""
       )}
 
-      <div className="log_container">
+      <div
+        className="log_container"
+        onClick={() => scroll.scrollToTop({ duration: 500 })}
+      >
         {/* <SiWebmoney /> */}
-        <img src={Webmoney} alt="logo" width={38} height={38} />
+        <img src={Webmoney} alt="logo" width={38} height={38} loading="lazy" />
       </div>
       <div className={`tab_group ${showSide ? "show" : ""}`}>
         <span

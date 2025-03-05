@@ -8,6 +8,10 @@
   z-index: 10000;
   background-color: black;
 }
+.navbar_container .visible{
+  background: var(--color-ui-2);
+  position: static;
+}
 .active {
   background: var(--gradient-1);
   background-size: 200% auto;

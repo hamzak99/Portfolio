@@ -1,9 +1,44 @@
-import React from "react";
+import React,{useRef} from "react";
 import "./Header.css";
 import { profile1, threeD } from "../../images/index.js";
 import { TypingEffect } from "./TypingEffect.jsx";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const Header = () => {
+
+  const container = useRef(null);
+  gsap.registerPlugin(useGSAP)
+  useGSAP(() => {
+    gsap.fromTo("profile_photo_container",{
+      scale:.5,
+      duration:1,
+      opacity:0.5,
+    },
+  {
+    scale:1,
+    duration:1,
+    ease:"sine.in",
+    opacity:1,
+  })
+
+  const timeline = gsap.timeline();
+  timeline.from(".header_info_top",{
+    opacity:0,
+  })
+  .from(".header_title",{
+    opacity:0,
+    y:-30,
+  })
+  .from(".header_description",{
+    opacity:0,
+  })
+  .from(".btn",{
+    x:-40,
+    opacity:0,
+    stagger:.5,
+  })
+  },{scope:container})
+
   return (
     <header id="header" className="blur-effect">
       {/* <div className="stroke_text intro_text">HELLO</div> */}
@@ -40,7 +75,7 @@ const Header = () => {
         </div>
         <div className="column profile_wrapper">
           <div className="profile_photo_container">
-            <img src={threeD} alt="img" className="profile_photo" />
+            <img src={threeD} alt="img" className="profile_photo" loading="lazy"/>
           </div>
         </div>
       </div>

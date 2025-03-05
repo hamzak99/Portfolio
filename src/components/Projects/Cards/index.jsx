@@ -15,7 +15,7 @@ const Card = (props) => {
     <div className="card">
       <div className="picture">
         {/* {console.log(Object.values(props.image)[0])} */}
-        <img src={Object.values(props.image)[0]} alt={props.title} />
+        <img src={Object.values(props.image)[0]} alt={props.title} loading="lazy" />
       </div>
 
       <div className="card_details">

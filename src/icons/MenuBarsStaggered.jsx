@@ -1,6 +1,6 @@
 import React from "react";
 
-const MenuBarsStaggered = (setShowSide, showSide) => {
+const MenuBarsStaggered = ({ setShowSide, showSide }) => {
   return (
     <div>
       <svg
